@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+
+{% block data %}
+{% for data in cat_data %}
+{{data.category_name}}
+{% endfor %}
+{% for data in pro_data %}
+{{data.product_name}}
+{{data.product_tag}}
+{{data.product_description}}
+    {{data.product_image}}
+    <img src="/media/{{data.product_image}}" alt="img" width="50" height="50">
+{{data.product_price}}
+    <br>
+    <br>
+{% endfor %}
+{% endblock %}
+
+
+</body>
+</html>
